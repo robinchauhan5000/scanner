@@ -1,12 +1,13 @@
 import React, { useEffect } from 'react'
-import RNModuleTemplateModule, { Counter } from 'react-native-module-template'
+import scannerModule, { Scanner } from 'witsscanner'
+
 
 const App = () => {
   useEffect(() => {
-    console.log(RNModuleTemplateModule)
+    console.log('scannerModule', scannerModule)
   })
 
-  return <Counter />
+  return <Scanner />
 }
 
 export default App

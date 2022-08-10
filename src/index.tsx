@@ -1,26 +1,20 @@
-import * as React from 'react'
-import { Button, NativeModules, StyleSheet, Text, View } from 'react-native'
+import { NavigationContainer } from '@react-navigation/native'
+import React, { FC } from 'react'
+import { NativeModules, Text } from 'react-native'
 
-export const addOne = (input: number) => input + 1
+import { ScanAndAddScreen } from './ScanAndAddScreen'
 
-export const Counter = () => {
-  const [count, setCount] = React.useState(0)
+export const Scanner: FC = () => {
+  React.useEffect(() => {
+    console.log('ASDSdsds')
+  }, [])
 
   return (
-    <View style={styles.container}>
-      <Text>You pressed {count} times</Text>
-      <Button onPress={() => setCount(addOne(count))} title='Press Me' />
-    </View>
+    <NavigationContainer>
+      <Text>Hello World</Text>
+      <ScanAndAddScreen />
+    </NavigationContainer>
   )
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-    height: 200,
-  },
-})
-
-export default NativeModules.RNModuleTemplateModule
+export default NativeModules.scannerModule
